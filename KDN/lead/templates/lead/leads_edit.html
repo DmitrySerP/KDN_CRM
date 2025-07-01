@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block title %}Edit lead{% endblock  %}
+
+{% block content %}
+    <div class="py-4 px-4">
+        <h1 class='font-serif italic text-3xl'>Edit lead</h1>
+
+        <form method="post" action="." class="font-mono italic text-base">
+            {%csrf_token%}
+
+            {{ form.as_p }}
+
+            <button class="py-3 px-2 bg-emerald-700 rounded-xl text-white">Submit</button>
+        </form>
+    </div>
+{% endblock %}
