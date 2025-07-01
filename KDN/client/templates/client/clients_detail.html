@@ -1,0 +1,32 @@
+{% extends "core/base.html" %}
+
+{% load tz %}
+
+{% block title %}{{ client.name }}{% endblock %}
+
+{% block content %}
+    <div class="py-4 px-4">
+        <h1 class="mb-3 ml-3 font-mono text-2xl">{{ client.name }}</h1>
+    
+        {% if client.description %}
+            <p class="font-semibold">Description</p>
+            <p class="mb-2">{{ client.description }}</p>
+        {% endif %}
+
+        <p class="font-semibold">Created_at</p>
+        <p class="mb-2">{% timezone "Europe/Moscow" %}{{ client.created_at|date:"M-d-Y H:i" }}{% endtimezone %}</p>
+
+        <p class="font-semibold">Modifed_at</p>
+        <p class="mb-2">{% timezone "Europe/Moscow" %}{{ client.modified_at|date:"M-d-Y H:i"}}{% endtimezone %}</p>
+
+        <hr class="my-1">
+
+        <a href="{% url 'clients_edit' client.id %}" class="py-1 px-4 rounded-xl bg-lime-800 | font-mono italic text-[16px] text-white">Edit</a>
+        <a href="{% url 'clients_delete' client.id %}" class="py-1 px-3 rounded-xl bg-red-500 | font-mono italic text-[16px] text-black">Delete</a>
+
+        <hr class="my-1">
+
+        <a href="{% url 'clients_list' %}" class="font-mono font-bold text-[20px]">Back to clients</a>
+    </div>
+
+{% endblock %}
