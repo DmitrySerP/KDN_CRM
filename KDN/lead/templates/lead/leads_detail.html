@@ -27,8 +27,9 @@
 
         <hr class="my-1">
 
-        <a href="{% url 'leads_edit' lead.id %}" class="py-2 px-4 rounded-xl bg-lime-800 | font-mono italic text-[20px] text-white">Edit</a>
-        <a href="{% url 'leads_delete' lead.id %}" class="py-2 px-4 rounded-xl bg-red-600 | font-mono italic text-[20px] text-black">Delete</a>
+        <a href="{% url 'leads_convert' lead.id %}" class="py-1 px-4 rounded-xl bg-green-800 | font-mono italic text-[20px] text-white">Convert to client</a>
+        <a href="{% url 'leads_edit' lead.id %}" class="py-1 px-4 rounded-xl bg-lime-800 | font-mono italic text-[20px] text-white">Edit</a>
+        <a href="{% url 'leads_delete' lead.id %}" class="py-1 px-4 rounded-xl bg-red-600 | font-mono italic text-[20px] text-black">Delete</a>
 
         <hr class="my-1">
 
