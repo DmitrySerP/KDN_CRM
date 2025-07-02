@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'client',
     'core',
     'lead',
+    'team',
     'dashboard',
     'userprofile',
 ]

@@ -6,12 +6,18 @@
     <div class="py-4 px-4">
         <h1 class='font-serif italic text-3xl'>Add client</h1>
 
-        <form method="post" action="." class="font-mono italic text-base">
-            {%csrf_token%}
+        {% if team.plan.max_clients > team.clients.all|length %} 
+            <form method="post" action="." class="font-mono italic text-base">
+                {%csrf_token%}
 
-            {{ form.as_p }}
+                {{ form.as_p }}
 
-            <button class="py-3 px-2 bg-emerald-700 rounded-xl text-white">Submit</button>
-        </form>
+                <button class="py-3 px-2 bg-emerald-700 rounded-xl text-white">Submit</button>
+            </form>
+        {% else %}
+            <div class="mt-4 px-4 py-4 bg-red-500 rounded-xl italic text-white">
+                Your team have has reached maximum number of clients. Your owner must upgrade your plan!
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

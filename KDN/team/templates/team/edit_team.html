@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Edit team - ({{ team.name }}){% endblock %}
+
+{% block content %}
+    <div class="py-4 px-4">
+        <h1 class='font-serif italic text-3xl'>Edit team - ({{ team.name }})</h1>
+
+        <form method="post" action="." class="font-mono italic text-base">
+            {%csrf_token%}
+
+            {{ form.as_p }}
+
+            <button class="py-2 px-3 bg-emerald-700 rounded-xl text-white">Submit</button>
+        </form>
+    </div>
+{% endblock %}
